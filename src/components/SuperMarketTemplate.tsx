@@ -1,11 +1,13 @@
+import { ReactNode } from 'react';
 import './SuperMarketTemplate.css';
 
 interface Props {
-    items: any;
-    basket: any;
+    items: ReactNode;
+    basket: ReactNode;
+    total: ReactNode;
 }
 
-const SuperMarketTemplate = ({ items, basket }: Props) => {
+const SuperMarketTemplate = ({ items, basket, total }: Props) => {
   return (
     <div className="SuperMarketTemplate">
       <div className="items-wrapper">
@@ -15,6 +17,7 @@ const SuperMarketTemplate = ({ items, basket }: Props) => {
       <div className="basket-wrapper">
         <h2>장바구니</h2>
         {basket}
+        {total}
       </div>
     </div>
   );

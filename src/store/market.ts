@@ -1,4 +1,5 @@
 import { observable } from "mobx";
+import counter from './count';
 
 export interface SelectedItem {
   name: string;
@@ -27,7 +28,7 @@ const market = observable<Market>({
       });
       return;
     }
-    exists.count++;
+    exists.count += counter.number;
   },
   take(name: string) {
     const itemToTakeIndex: number = this.selectedItems.findIndex(

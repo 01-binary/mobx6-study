@@ -11,9 +11,7 @@ const BasketItemList = () => {
   return useObserver(() => {
     const itemList = market.selectedItems.map((item) => (
       <BasketItem
-        name={item.name}
-        price={item.price}
-        count={item.count}
+        item={item}
         key={item.name}
         onTake={onTake}
       />
