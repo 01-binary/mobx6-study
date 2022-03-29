@@ -1,5 +1,7 @@
-import countStore from "./count";
-import doubleStore from "./double";
+import counter from "./count";
+import double from "./double";
 
-const store = { countStore, doubleStore };
-export default store;
+const useStore = () => {
+  return { counter, double };
+};
+export default useStore;

@@ -2,12 +2,12 @@ import { observable } from 'mobx'
 
 const countObject = observable({
   // 헷갈릴 수 있으니 num으로 작명
-  num: 0,
+  number: 0,
   increase() {
-    this.num++
+    this.number++
   },
   decrease() {
-    this.num--
+    this.number--
   },
 })
 
