@@ -1,5 +1,5 @@
 import { observable } from "mobx";
-import counter from './count';
+import counter from "./count";
 
 export interface SelectedItem {
   name: string;
@@ -24,7 +24,7 @@ const market = observable<Market>({
       this.selectedItems.push({
         name,
         price,
-        count: 1,
+        count: counter.number,
       });
       return;
     }
@@ -35,8 +35,8 @@ const market = observable<Market>({
       (item: any) => item.name === name
     );
     if (itemToTakeIndex > -1) {
-    //   itemToTake.count--;
-    this.selectedItems[itemToTakeIndex].count--;
+      //   itemToTake.count--;
+      this.selectedItems[itemToTakeIndex].count--;
 
       if (this.selectedItems[itemToTakeIndex].count === 0) {
         // 갯수가 0 이면
@@ -46,8 +46,8 @@ const market = observable<Market>({
   },
   get total() {
     console.log("총합 계산...");
-    return this.selectedItems.reduce((previous: any, current: any) => {
-      return previous + current.price * current.count;
+    return this.selectedItems.reduce((acc: number, current: SelectedItem) => {
+      return acc + current.price * current.count;
     }, 0);
   },
 });

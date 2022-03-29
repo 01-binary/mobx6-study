@@ -11,7 +11,7 @@
     margin-top: 0;
   }
   
-  .SuperMarketTemplate>div {
+  .SuperMarketTemplate > div {
     padding: 1rem;
     flex: 1;
   }

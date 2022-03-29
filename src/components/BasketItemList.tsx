@@ -7,24 +7,12 @@ const BasketItemList = () => {
   const onTake = (name: string) => {
     market.take(name);
   };
-  
+
   return useObserver(() => {
     const itemList = market.selectedItems.map((item) => (
-      <BasketItem
-        item={item}
-        key={item.name}
-        onTake={onTake}
-      />
+      <BasketItem item={item} key={item.name} onTake={onTake} />
     ));
-    return (
-      <div>
-        {itemList}
-        <hr />
-        <p>
-          <b>총합: </b> {market.total}원
-        </p>
-      </div>
-    );
+    return <div>{itemList}</div>;
   });
 };
 

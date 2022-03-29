@@ -1,17 +1,19 @@
-import { observable } from 'mobx'
+import { observable } from "mobx";
 
 const countObject = observable({
   // 헷갈릴 수 있으니 num으로 작명
   number: 1,
   increase() {
-    this.number++
+    this.number++;
   },
   decrease() {
-    this.number--
+    if (this.number > 1) {
+      this.number--;
+    }
   },
-})
+});
 
-export default countObject
+export default countObject;
 
 //2. makeAutoObservable
 // class Count {
@@ -35,7 +37,7 @@ export default countObject
 //1. makeObservable
 // class Count {
 //     number: number = 0;
-  
+
 //     constructor() {
 //       makeObservable(this, {
 //         number: observable,
@@ -43,7 +45,7 @@ export default countObject
 //         decrease: action,
 //       });
 //     }
-  
+
 //     increase = () => {
 //       this.number++;
 //     };
@@ -51,6 +53,6 @@ export default countObject
 //       this.number--;
 //     };
 //   }
-  
+
 //   const countStore = new Count();
 //   export default countStore;

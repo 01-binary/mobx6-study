@@ -1,5 +1,5 @@
-import { useObserver } from 'mobx-react';
-import useStore from '../store';
+import { useObserver } from "mobx-react";
+import useStore from "../store";
 
 const Counter = () => {
   const { counter } = useStore();
