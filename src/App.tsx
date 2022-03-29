@@ -8,7 +8,13 @@ const App: FC = observer(() => {
 
 
   autorun(() => {
-    console.log('temp');
+    if (doubleStore.double) {
+      console.log('Double' + doubleStore.double)
+    }
+    if (doubleStore.double === 8) {
+      console.log('만약 value가 8이라면 0으로 초기화')
+      doubleStore.value = 0
+    }
   })
 
   return (
